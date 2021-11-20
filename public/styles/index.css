@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 @font-face {
-    font-family: 'pocket-calculator';
-    src: url('./public/assets/fonts/pocket-calculator/pocket_calcuatlor_ot.otf');
+    font-family: 'pocket';
+    src: url('../assets/fonts/pocket-calculator/pocket_calcuatlor_ot.otf') format('opentype'),
+    url('../assets/fonts/pocket-calculator/pocket_calcuatlor_tt.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
 * {
@@ -88,7 +91,8 @@ body{
     height: 100%;
     background-color: rgba(0, 0, 0, 0.0);
     border: none;
-    font-family: 'pocket-calculator';
+
+    font-family: 'pocket', sans-serif;
     font-size: 2em;
 }
 
@@ -180,10 +184,10 @@ body{
 }
 
 .backspace-img {
-    background-image: url('/public/assets/icons/backspace_white_24dp.svg');
+    background-image: url('../assets/icons/backspace_white_24dp.svg');
     background-position: center;
     background-repeat: no-repeat;
 }
 .backspace-img:active {
-    background-image: url('/public/assets/icons/backspace_white-dark_24dp.svg');
+    background-image: url('../assets/icons/backspace_white-dark_24dp.svg');
 }

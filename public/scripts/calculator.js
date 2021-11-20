@@ -4,8 +4,8 @@ window.onload = () => {
     var counter;
     const display = document.getElementById("display");
     var equation = '';
-    var beep1= new Audio(`/public/assets/sounds/beep-07a-numbers.mp3`);
-    var beep2 = new Audio(`/public/assets/sounds/beep-08a-operators.mp3`);
+    var beep1= new Audio(`./public/assets/sounds/beep-07a-numbers.mp3`);
+    var beep2 = new Audio(`./public/assets/sounds/beep-08a-operators.mp3`);
     var keys = new Array;
 
     // MAPPING ALL BUTTONS ---------------------------------------------------------------------------------------------
