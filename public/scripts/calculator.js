@@ -18,8 +18,8 @@ window.onload = () => {
 
             playSound(beep1);
 
-            var element_value = element.path[0].value;
-            var element_text = element.path[0].outerText;
+            var element_value = element.target.value;
+            var element_text = element.target.innerHTML;
 
             drawDisplay(element_text);
             equation += element_value;
@@ -34,8 +34,11 @@ window.onload = () => {
         keys[counter+number_key_length] = document.querySelector(`#operator${counter}`);
         keys[counter+number_key_length].addEventListener("click", (element) => {
 
-            var element_value = element.path[0].value;
-            var element_text = element.path[0].outerText;
+            var element_value = element.target.value;
+            var element_text = element.target.innerHTML;
+
+            console.log(element_value);
+            console.log(element_text);
 
             drawDisplay(element_text);
             equation += element_value;
@@ -50,7 +53,7 @@ window.onload = () => {
                 try{
                     drawResult(calc(equation));
                 }catch(error){
-                    drawResult('ERRO');
+                    drawResult('ERROR!');
                     equation = '';
                 }
             }
@@ -91,7 +94,6 @@ window.onload = () => {
         {
             return equation.toFixed(3);
         }
-
 
     }
 
