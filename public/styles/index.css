@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@font-face {
+    font-family: 'pocket-calculator';
+    src: url('/public/assets/fonts/pocket-calculator/pocket_calcuatlor_ot.otf');
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    margin: 0px;
+    padding: 0px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    background-color: rgb(233, 255, 233);
+}
+
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+.container {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+
+}
+
+.calculator-body {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+
+    padding: 30px 0px;
+
+    max-width: 280px;
+    border-radius: 10px;
+    background-color: #303738;
+
+    border-top: solid 5px rgb(100, 100, 100);
+    border-left: solid 5px rgb(100, 100, 100);
+    border-bottom: solid 10px rgb(30, 30, 30);
+    border-right: solid 10px rgb(30, 30, 30);
+    box-shadow: 8px 8px 0px 8px rgba(0, 0, 0, 0.3);
+}
+
+
+.calculator-parts {
+    background-color: rgb(48, 55, 56);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 220px;
+    border-radius: 10px;
+}
+
+.display-area {
+    display: flex;
+    background-color: rgb(143, 188, 143);
+    width: 100%;
+    height: 50px;
+    margin-bottom: 30px;
+    border-top: solid rgb(220, 245, 220) 2px;
+    border-left: solid rgb(220, 245, 220) 2px;
+    border-bottom: solid rgb(74, 119, 74) 5px;
+    border-right: solid rgb(74, 119, 74) 5px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 0px 5px rgba(24, 24, 30);
+    align-items: center;
+}
+
+.display {
+    text-align: end;
+    color: rgb(20, 20, 20);
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.0);
+    border: none;
+    font-family: 'pocket-calculator';
+    font-size: 2em;
+}
+
+.display::placeholder {
+    color: rgb(20, 20, 20);
+}
+
+.keys-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.row-1-col-1 {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.row-1-col-2 {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.key {
+    cursor: pointer;
+    width: 45px;
+    height: 45px;
+    margin: 5px;
+    font-size: 1.5em;
+    font-weight: bold;
+    
+    border-top: solid rgb(255, 255, 255) 2px;
+    border-left: solid rgb(255, 255, 255) 2px;
+    border-bottom: solid rgb(102, 102, 102) 5px;
+    border-right: solid rgb(102, 102, 102) 5px;
+    background-color: rgb(199, 199, 199);
+    
+    border-radius: 8px;
+    box-shadow: 5px 5px 0px 5px rgba(24, 24, 30);
+}
+
+.key:hover {
+    outline: solid white 2px;
+}
+
+.key:active {
+    transition-duration: 0.1s;
+    border-bottom: solid rgb(255, 255, 255) 2px;
+    border-right: solid rgb(255, 255, 255) 2px;
+    border-top: solid rgb(102, 102, 102) 5px;
+    border-left: solid rgb(102, 102, 102) 5px;
+    background-color: rgb(150, 150, 150);
+    color: rgb(0, 0, 0);
+    box-shadow: 0px 0px 0px 0px rgba(24, 24, 30);
+    outline: none;
+}
+
+.special-key {
+    border-top: solid rgb(208, 126, 126) 2px;
+    border-left: solid rgb(208, 126, 126) 2px;
+    border-bottom: solid rgb(102, 18, 18) 5px;
+    border-right: solid rgb(102, 18, 18) 5px;
+    background-color: rgb(165, 42, 42);
+    color: #f5f5f5;
+}
+
+.special-key:active {
+    transition-duration: 0.2ms;
+    border-bottom: solid rgb(208, 126, 126) 2px;
+    border-right: solid rgb(208, 126, 126) 2px;
+    border-top: solid rgb(102, 18, 18) 5px;
+    border-left: solid rgb(102, 18, 18) 5px;
+    background-color: rgb(124, 29, 29);
+    color: #b5b5b5;
+    box-shadow: 0px 0px 0px 0px rgba(24, 24, 30);
+}
+
+.v-doubled {
+    height: 100px;
+}
+
+.h-doubled {
+    width: 100px;
+}
+
+.backspace-img {
+    background-image: url('/public/assets/icons/backspace_white_24dp.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.backspace-img:active {
+    background-image: url('/public/assets/icons/backspace_white-dark_24dp.svg');
+}

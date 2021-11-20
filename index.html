@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#822">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#882">
+    <meta name="msapplication-navbutton-color" content="#882">
+    <link rel="stylesheet" href="./public/styles/index.css">
+    <script src="./public/scripts/calculator.js"></script>
+    <title>JVSC | Calculadora</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="calculator-body">
+            <div class="calculator-parts">
+                <div class="display-area">
+                    <input type="text" id="display" class="display" placeholder="0" disabled>
+                    </input>
+                </div>
+                <div class="keys-area">
+                    <div class="row-1-col-1 keys">
+                        
+                        <button class="key-operator key special-key" id="operator7" value="clear">C</button>
+                        <button class="key-operator key" id="operator4" value="*">&times;</button>
+                        <button class="key-operator key" id="operator1" value="/">&div;</button>
+                        
+                        <!-- row 1 -->
+                        <button class="key-number key" id="n7" value="7">7</button>
+                        <button class="key-number key" id="n8" value="8">8</button>
+                        <button class="key-number key" id="n9" value="9">9</button>
+                        
+                        <!-- row 2 -->
+                        <button class="key-number key" id="n4" value="4">4</button>
+                        <button class="key-number key" id="n5" value="5">5</button>
+                        <button class="key-number key" id="n6" value="6">6</button>
+                        
+                        <!-- row 3 -->
+                        <button class="key-number key" id="n1" value="1">1</button>
+                        <button class="key-number key" id="n2" value="2">2</button>
+                        <button class="key-number key" id="n3" value="3">3</button>
+                        
+                        <!-- row 4 -->
+                        <button class="key-number key h-doubled" id="n0" value="0">0</button>
+                        <button class="key-operator key" id="operator0" value=".">.</button>
+                    </div>
+
+                    <div class="row-1-col-2 keys">
+                        <button class="key-operator key special-key backspace-img" id="operator6" value="backspace"></button>            
+                        <button class="key-operator key" id="operator2" value="+">&plus;</button>
+                        <button class="key-operator key" id="operator3" value="-">&minus;</button>
+                        <button class="key-operator key special-key v-doubled" id="operator5" value="equals">&equals;</button>
+                    </div>                        
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
