@@ -37,9 +37,6 @@ window.onload = () => {
             var element_value = element.target.value;
             var element_text = element.target.innerHTML;
 
-            console.log(element_value);
-            console.log(element_text);
-
             drawDisplay(element_text);
             equation += element_value;
 
