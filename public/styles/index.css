@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 @font-face {
     font-family: 'pocket-calculator';
-    src: url('/public/assets/fonts/pocket-calculator/pocket_calcuatlor_ot.otf');
+    src: url('./public/assets/fonts/pocket-calculator/pocket_calcuatlor_ot.otf');
 }
 
 * {
