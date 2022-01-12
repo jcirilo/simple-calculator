@@ -220,19 +220,6 @@ p {
     background-repeat: no-repeat;
 }
 
-/* .display-area::before{
-
-    content: '';
-    position: absolute;
-    margin-left: -110px;
-    margin-top: -15px;
-    display: block;
-    width: 100px;
-    height: 100px;
-    background-color: rgba(255, 255, 255, 1);
-    clip-path: polygon(20% 0, 100% 100%, 80% 100%, 100% 100%);
-} */
-
 .alert {
     transition-duration: 2s;
     position: fixed;
