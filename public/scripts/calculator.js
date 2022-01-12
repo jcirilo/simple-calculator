@@ -1,134 +1,156 @@
 window.onload = () => {
-    const operator_key_length = document.getElementsByClassName("key-operator").length;
-    const number_key_length = document.getElementsByClassName("key-number").length;
-    var counter;
-    const display = document.getElementById("display");
-    var equation = '';
-    var beep1= new Audio(`./public/assets/sounds/beep-07a-numbers.mp3`);
-    var beep2 = new Audio(`./public/assets/sounds/beep-08a-operators.mp3`);
-    var keys = new Array;
 
-    // MAPPING ALL BUTTONS ---------------------------------------------------------------------------------------------
-    // Numbers
+    // VARIÁVEIS GLOBAIS -------------------------------------------
 
-    for(counter = 0; counter < number_key_length; counter++)
-    {
-        keys[counter] = document.querySelector(`#n${counter}`);
-        keys[counter].addEventListener("click", (element) => {
+    const display = document.querySelector('#display');
+    const keys = document.querySelectorAll('.key');
+    var history = new Array;
+    var equation = new String;
+    var enter_x_pressed = 0;
 
-            playSound(beep1);
+    // MAPEAR TECLAS -----------------------------------------------
+    
+    function mapKeys(){
+        keys.forEach(e => {
+            e.addEventListener("click", k => {
+    
+                let key_value = k.target.dataset.value;
+                let key_text = k.target.dataset.text;
+                
+                if(k.target.classList.contains("special-key"))
+                {
+                    switch(key_value)
+                    {
+                        case "Backspace":
+                            backspace();
+                            break;
+                        case "Delete":
+                            clean();
+                            break;
+                        case "Enter":
+                            calculate(equation)
+                            break;
+                    }
 
-            var element_value = element.target.value;
-            var element_text = element.target.innerHTML;
-
-            drawDisplay(element_text);
-            equation += element_value;
-
-        });
+                } else {
+                    drawDisplay(key_text);
+                    equation += key_value;
+                }
+            })
+        })
     }
+    mapKeys();
 
-    // Special keys
+    // FUNÇÕES DO TECLADO ------------------------------------------
 
-    for(counter = 0; counter < operator_key_length; counter++)
+    function listenKeyboard()
     {
-        keys[counter+number_key_length] = document.querySelector(`#operator${counter}`);
-        keys[counter+number_key_length].addEventListener("click", (element) => {
-
-            var element_value = element.target.value;
-            var element_text = element.target.innerHTML;
-
-            drawDisplay(element_text);
-            equation += element_value;
-
-            if(element_value == "equals")
+        document.addEventListener("keydown", (k) => {
+            for(let i = 0; i < keys.length; i ++)
             {
-                
-                playSound(beep2);
-                
-                equation = equation.slice(0, -6);
-
-                try{
-                    drawResult(calc(equation));
-                }catch(error){
-                    drawResult('ERROR!');
-                    equation = '';
+                if(k.key === keys[i].dataset.value)
+                {
+                    keys[i].click();
+                    keys[i].classList.add('enabled');
+                    break;
                 }
             }
-            else
+            if(k.key === ',') 
             {
-                playSound(beep1);
+                document.querySelector('button[data-value="."]').click();
+                document.querySelector('button[data-value="."]').classList.add('enabled');
             }
-
-            if(element_value == "backspace")
+        });
+        document.addEventListener("keyup", (k) => {
+            for(let i = 0; i < keys.length; i ++)
             {
-                backspace();
+                if(k.key === keys[i].dataset.value)
+                {
+                    keys[i].classList.remove('enabled');
+                    break;
+                }
             }
-
-            if(element_value == "clear"){
-                clearDisplay();
+            if(k.key === ',')
+            {
+                document.querySelector('button[data-value="."]').classList.remove('enabled');
             }
         });
     }
+    listenKeyboard();
 
-    // FUNCTION TO SHOW THE INPUT ON DISPLAY -------------------------------------------------------------------------
-    
-    function drawDisplay(element) 
+    // VERIFICAR SE A TELA ESTÁ VAZIA ------------------------------
+
+    function displayIsEmpty()
     {
-        display.value += element;
+        let display_span = document.querySelector('#display-span');
+        (display.innerText !== '')?
+            display_span.style.display = "none":
+            display_span.style.display = "inline-flex";
     }
 
-    // FUNCTION TO CALCULATE -----------------------------------------------------------------------------------------
+    // REMOVER O PRIMEIRO ZERO --------------------------------------
 
-    function calc(value)
+    function removeFirstZero()
     {
-        equation = eval(value);
-        
-        if(equation % 1 === 0)
+        if(display.innerText[0] === '0' && display.innerText.length > 1 && display.innerText[1] !== '.')
         {
-            return parseInt(equation);
-        }
-        else
-        {
-            return equation.toFixed(3);
-        }
-
-    }
-
-    // FUNCTION TO SHOW THE OUTPUT ON DISPLAY -------------------------------------------------------------------------
-
-    function drawResult(element)
-    {
-        if(equation === 0 || equation === 'undefined')
-        {
-            clearDisplay();
-        }
-        else
-        {
-            display.value = element;
+            display.innerText = display.innerText.slice(1);
+            equation = equation.slice(1);
         }
     }
 
-    // FUNCTION TO CLEAR THE DISPLAY -----------------------------------------------------------------------------------
+    // FUNÇÃO PARA MOSTRAR EQUAÇÕES NA TELA DA CALCULADORA ---------
 
-    function clearDisplay ()
+    function drawDisplay(element)
     {
+        display.innerText += element;
+        displayIsEmpty();
+        removeFirstZero();
+        display.title = display.innerText;
+    }
+
+    // FUNÇÃO PARA LIMPAR A CALCULADORA ----------------------------
+
+    function clean()
+    {
+        display.innerText = '';
         equation = '';
-        display.value = null;
+        displayIsEmpty();
     }
-
-    // BACKSPACE FUNCTION -----------------------------------------------------------------------------------------------
+    
+    // BACKSPACE ---------------------------------------------------
 
     function backspace()
     {
-        equation = equation.slice(0, -10);
-        display.value = display.value.slice(0, -1);
+        equation = equation.slice(0, -1);
+        display.innerText = display.innerText.slice(0, -1);
+        displayIsEmpty();
     }
 
-    function playSound(sound)
-    {
-        sound.volume = 0.01;
-        sound.pause();
-        sound.currentTime = 0.0;
-        sound.play();
+    // CALCULAR ----------------------------------------------------
+
+    function calculate(eq) {
+        
+        (eval(eq) === undefined)? equation = '' : equation = `${eval(eq)}`;
+        display.innerText = equation;
+        
+        history[enter_x_pressed] = equation;
+        enter_x_pressed++;
+        
+        verifyHistory();
     }
+
+    // *FUNÇÃO EXTRA* VER SE O ENTER FOI PRECIONADO DUAS VEZES SEGUIDAS,
+    // SE SIM O DISPLAY É LIMPO
+
+    function verifyHistory() {
+        if(enter_x_pressed > 1){
+            enter_x_pressed = 0;
+            if(history[1] === history[0])
+            {
+                clean();
+            }
+        }
+    }
+
 }
