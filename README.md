@@ -1,7 +1,5 @@
 # SIMPLE CALCULATOR
 
-Simple and Beautiful calculator made with JavaScript, HTML and CSS.
-
-***[Start Calculate!](https://jvscirilo.github.io/simple-calculator/)***
+Simple calculator made with HTML5, CSS3 and JavaScript.
 
 ![Screenshot](screenshot-1.png)
