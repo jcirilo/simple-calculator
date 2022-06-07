@@ -1,5 +1,3 @@
-import alerta from './notifications.js';
-
 window.onload = () => {
 
     // VARIÁVEIS GLOBAIS -------------------------------------------
