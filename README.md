@@ -1,4 +1,4 @@
-<h1 align="center"><img alt="logo.png" width="100px" src="https://github.com/joao-victor-da-silva-cirilo/simple-calculator/blob/reorganizando-codigo/public/assets/images/logo.png"/></h1>
+<h1 align="center"><img alt="logo.png" width="300px" src="https://github.com/joao-victor-da-silva-cirilo/simple-calculator/blob/reorganizando-codigo/public/assets/images/logo.png"/></h1>
 
 ## About
 
