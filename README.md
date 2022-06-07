@@ -6,4 +6,4 @@
 
  Also you can use your keyboard to input equations.
 
- <h2 align="center"><img alt="demo.png" src="https://github.com/joao-victor-da-silva-cirilo/simple-calculator/blob/reorganizando-codigo/public/assets/images/demo.png"></h2>
+ <h2 align="center"><img alt="demo.png" width="250px" src="https://github.com/joao-victor-da-silva-cirilo/simple-calculator/blob/reorganizando-codigo/public/assets/images/demo.png"></h2>
