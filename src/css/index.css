@@ -2,8 +2,8 @@
 
 @font-face {
     font-family: 'pocket';
-    src: url('/public/assets/fonts/pocket_calcuatlor_ot.otf') format('opentype'),
-    url('/public/assets/fonts/pocket_calcuatlor_tt.ttf') format('truetype');
+    src: url('./public/assets/fonts/pocket_calcuatlor_ot.otf') format('opentype'),
+    url('./public/assets/fonts/pocket_calcuatlor_tt.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
