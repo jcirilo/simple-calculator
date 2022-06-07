@@ -2,8 +2,8 @@
 
 @font-face {
     font-family: 'pocket';
-    src: url('../../public/assets/fonts/pocket_calcuatlor_ot.otf') format('opentype'),
-    url('../../public/assets/fonts/pocket_calcuatlor_tt.ttf') format('truetype');
+    src: url('./../../public/assets/fonts/pocket_calcuatlor_ot.otf') format('opentype'),
+    url('./../../public/assets/fonts/pocket_calcuatlor_tt.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -227,7 +227,7 @@ body{
 }
 
 .backspace-img {
-    background-image: url('../../public/assets/icons/backspace_white_24dp.svg');
+    background-image: url('./../../public/assets/icons/backspace_white_24dp.svg');
     background-position: center;
     background-repeat: no-repeat;
 }
