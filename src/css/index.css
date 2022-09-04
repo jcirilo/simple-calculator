@@ -267,7 +267,7 @@ body{
 }
 
 .github-icon:hover {
-    width: 250px;
+    width: 7em;
     animation-name: github-icon-in;
     animation-duration: .3s;
     animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
