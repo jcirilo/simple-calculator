@@ -1,9 +1,19 @@
-<h1 align="center"><img alt="logo.png" width="300px" src="https://github.com/joao-victor-da-silva-cirilo/simple-calculator/blob/reorganizando-codigo/public/assets/images/logo.png"/></h1>
+<h1 align="center">
+    <picture>
+        <source srcset="./public/assets/images/logo.png">
+        <img alt="Simple Calculator" width="300px"/>
+    </picture>
+</h1>
 
-## About
+## Resume
 
- A simple and retro calculator made with basic web language (HTML, CSS and JavaScript).
+A simple and retro calculator made with basic web language (HTML, CSS and JavaScript). **Try to use your computer keyboard to input simple equations!**
 
- Also you can use your keyboard to input equations.
+## Screenshot
 
- <h2 align="center"><img alt="demo.png" width="250px" src="https://github.com/joao-victor-da-silva-cirilo/simple-calculator/blob/reorganizando-codigo/public/assets/images/demo.png"></h2>
+<p align="center">
+    <picture>
+        <source srcset="./public/assets/images/demo.png" />
+        <img alt="demo picture" width="250px" />
+    </picture>
+</p>
