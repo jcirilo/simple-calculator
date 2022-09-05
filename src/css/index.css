@@ -299,11 +299,11 @@ body{
 
 @keyframes github-icon-in {
     0% {width: 40px;}
-    100% {width: 250px;}
+    100% {width: 60px;}
 }
 
 @keyframes github-icon-out {
-    0% {width: 250px;}
+    0% {width: 60px;}
     100% {width: 40px;}
 }
 
